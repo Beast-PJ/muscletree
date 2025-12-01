@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
-import { FaPlay, FaPhone } from "react-icons/fa";
+import { FaPlay, FaPhone, FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-gym.jpg";
 
 const Hero = () => {
+  const whatsappMessage = encodeURIComponent(
+    "Hi! I would like to book an appointment at Muscle Tree Gym. Please provide me with available slots and membership details."
+  );
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -69,8 +73,12 @@ const Hero = () => {
             <Button
               size="lg"
               className="bg-gradient-to-r from-primary to-accent hover:shadow-glow text-lg px-8 py-6"
+              asChild
             >
-              Join Now
+              <a href={`https://wa.me/919922721114?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp className="mr-2" />
+                Book Appointment
+              </a>
             </Button>
             <Button
               size="lg"
@@ -84,9 +92,12 @@ const Hero = () => {
               size="lg"
               variant="outline"
               className="border-accent text-accent hover:bg-accent hover:text-accent-foreground text-lg px-8 py-6"
+              asChild
             >
-              <FaPhone className="mr-2" />
-              +91 99227 21114
+              <a href="tel:+919922721114">
+                <FaPhone className="mr-2" />
+                +91 99227 21114
+              </a>
             </Button>
           </motion.div>
         </motion.div>

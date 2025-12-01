@@ -17,11 +17,15 @@ const FloatingCTA = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const whatsappMessage = encodeURIComponent(
+    "Hi! I would like to book an appointment at Muscle Tree Gym. Please provide me with available slots and membership details."
+  );
+
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-4">
-      {/* WhatsApp Button */}
+      {/* WhatsApp Appointment Button */}
       <motion.a
-        href="https://wa.me/919922721114"
+        href={`https://wa.me/919922721114?text=${whatsappMessage}`}
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0 }}
@@ -29,6 +33,7 @@ const FloatingCTA = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
+        title="Book Appointment via WhatsApp"
       >
         <FaWhatsapp className="text-2xl" />
       </motion.a>

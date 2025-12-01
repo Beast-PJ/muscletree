@@ -8,6 +8,7 @@ import {
   FaRunning,
   FaUserTie,
   FaAppleAlt,
+  FaWhatsapp,
 } from "react-icons/fa";
 import strengthImage from "@/assets/strength-training.jpg";
 import cardioImage from "@/assets/cardio-section.jpg";
@@ -15,6 +16,10 @@ import cardioImage from "@/assets/cardio-section.jpg";
 const Services = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  
+  const whatsappMessage = encodeURIComponent(
+    "Hi! I would like to book an appointment at Muscle Tree Gym. Please provide me with available slots and membership details."
+  );
 
   const services = [
     {
@@ -123,13 +128,17 @@ const Services = () => {
             <p className="text-lg text-muted-foreground mb-6">
               Join Muscle Tree Gym today and get access to all our premium services and facilities.
             </p>
-            <motion.button
+            <motion.a
+              href={`https://wa.me/919922721114?text=${whatsappMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-lg font-display text-lg hover:shadow-glow transition-all duration-300"
+              className="bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-lg font-display text-lg hover:shadow-glow transition-all duration-300 inline-flex items-center gap-2"
             >
-              Get Started Now
-            </motion.button>
+              <FaWhatsapp />
+              Book Appointment Now
+            </motion.a>
           </div>
         </motion.div>
       </div>

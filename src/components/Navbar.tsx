@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaDumbbell, FaBars, FaTimes } from "react-icons/fa";
+import { FaDumbbell, FaBars, FaTimes, FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  const whatsappMessage = encodeURIComponent(
+    "Hi! I would like to book an appointment at Muscle Tree Gym. Please provide me with available slots and membership details."
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,8 +58,11 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button variant="default" size="lg" className="bg-gradient-to-r from-primary to-accent hover:shadow-glow">
-              Join Now
+            <Button variant="default" size="lg" className="bg-gradient-to-r from-primary to-accent hover:shadow-glow" asChild>
+              <a href={`https://wa.me/919922721114?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp className="mr-2" />
+                Book Now
+              </a>
             </Button>
           </div>
 
@@ -86,8 +93,11 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button variant="default" size="lg" className="w-full bg-gradient-to-r from-primary to-accent">
-              Join Now
+            <Button variant="default" size="lg" className="w-full bg-gradient-to-r from-primary to-accent" asChild>
+              <a href={`https://wa.me/919922721114?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp className="mr-2" />
+                Book Now
+              </a>
             </Button>
           </motion.div>
         )}
