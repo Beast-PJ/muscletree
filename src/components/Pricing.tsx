@@ -1,12 +1,18 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { FaCheck, FaStar } from "react-icons/fa";
+import { FaCheck, FaStar, FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
 const Pricing = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  
+  const getWhatsappMessage = (planName: string) => {
+    return encodeURIComponent(
+      `Hi! I'm interested in the ${planName} membership plan at Muscle Tree Gym. Please provide me with more details and available joining dates.`
+    );
+  };
 
   const plans = [
     {
@@ -121,8 +127,17 @@ const Pricing = () => {
                     ? "bg-gradient-to-r from-primary to-accent hover:shadow-glow"
                     : "bg-secondary hover:bg-secondary/80"
                 }`}
+                asChild
               >
-                Choose {plan.name}
+                <a 
+                  href={`https://wa.me/919922721114?text=${getWhatsappMessage(plan.name)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2"
+                >
+                  <FaWhatsapp />
+                  Choose {plan.name}
+                </a>
               </Button>
             </motion.div>
           ))}
