@@ -105,7 +105,7 @@ const Services = () => {
                 </div>
                 
                 <h3 className="text-2xl font-display mb-3 text-foreground group-hover:text-gradient transition-colors duration-300">
-                  {service.title} {service.title.includes("Kolhapur") ? "" : "in Kolhapur"}
+                  {service.title}
                 </h3>
                 
                 <p className="text-muted-foreground leading-relaxed">

@@ -53,7 +53,7 @@ const Gallery = () => {
             Gallery
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Take a visual tour of our state-of-the-art facility, premium equipment, and vibrant atmosphere.
+            Take a visual tour of Muscle Tree Gym's state-of-the-art facility in Kolhapur. Explore our premium equipment, modern workout spaces, and vibrant fitness atmosphere at our Nagalapark location.
           </p>
         </motion.div>
 
@@ -67,6 +67,15 @@ const Gallery = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative group cursor-pointer overflow-hidden rounded-xl"
               onClick={() => setSelectedImage(image.src)}
+              role="button"
+              tabIndex={0}
+              aria-label={`View ${image.alt}`}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setSelectedImage(image.src);
+                }
+              }}
             >
               <div className="aspect-video overflow-hidden">
                 <img
@@ -120,10 +129,11 @@ const Gallery = () => {
           onClick={() => setSelectedImage(null)}
         >
           <button
-            className="absolute top-4 right-4 text-3xl text-foreground hover:text-primary transition-colors"
+            className="absolute top-4 right-4 text-3xl text-foreground hover:text-primary transition-colors z-10"
             onClick={() => setSelectedImage(null)}
+            aria-label="Close image preview"
           >
-            <FaTimes />
+            <FaTimes aria-hidden="true" />
           </button>
           <img
             src={selectedImage}

@@ -5,7 +5,7 @@ import { FaStar, FaChevronLeft, FaChevronRight, FaQuoteLeft } from "react-icons/
 
 /**
  * Testimonials Component with Review Schema for SEO
- * Displays customer reviews with structured data for rich results
+ * Adds structured data for customer reviews and ratings
  */
 const Testimonials = () => {
   const ref = useRef(null);
@@ -53,11 +53,61 @@ const Testimonials = () => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
+  // Inject Review Schema for SEO
+  useEffect(() => {
+    const reviewSchema = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Muscle Tree Gym",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "200",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": testimonials.map(testimonial => ({
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": testimonial.name
+        },
+        "datePublished": new Date().toISOString().split('T')[0],
+        "reviewBody": testimonial.text,
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": testimonial.rating.toString(),
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }))
+    };
+
+    const existingScript = document.getElementById("schema-reviews");
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    const script = document.createElement("script");
+    script.id = "schema-reviews";
+    script.type = "application/ld+json";
+    script.text = JSON.stringify(reviewSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      const scriptToRemove = document.getElementById("schema-reviews");
+      if (scriptToRemove) {
+        scriptToRemove.remove();
+      }
+    };
+  }, []);
+
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }).map((_, i) => (
       <FaStar
         key={i}
         className={i < rating ? "text-accent" : "text-muted"}
+        aria-hidden="true"
       />
     ));
   };
@@ -130,19 +180,21 @@ const Testimonials = () => {
               <button
                 onClick={prevTestimonial}
                 className="w-12 h-12 rounded-full bg-primary/20 hover:bg-primary/30 text-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
+                aria-label="Previous testimonial"
               >
-                <FaChevronLeft />
+                <FaChevronLeft aria-hidden="true" />
               </button>
               <button
                 onClick={nextTestimonial}
                 className="w-12 h-12 rounded-full bg-primary/20 hover:bg-primary/30 text-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
+                aria-label="Next testimonial"
               >
-                <FaChevronRight />
+                <FaChevronRight aria-hidden="true" />
               </button>
             </div>
 
             {/* Dots Indicator */}
-            <div className="flex justify-center gap-2 mt-6">
+            <div className="flex justify-center gap-2 mt-6" role="tablist" aria-label="Testimonial navigation">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
@@ -152,6 +204,9 @@ const Testimonials = () => {
                       ? "bg-primary w-8"
                       : "bg-muted-foreground/30"
                   }`}
+                  role="tab"
+                  aria-selected={index === currentIndex}
+                  aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}
             </div>

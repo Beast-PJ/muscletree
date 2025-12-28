@@ -86,8 +86,9 @@ const Hero = () => {
               size="lg"
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-6"
+              aria-label="Watch gym tour video"
             >
-              <FaPlay className="mr-2" />
+              <FaPlay className="mr-2" aria-hidden="true" />
               Watch Tour
             </Button>
             <Button
