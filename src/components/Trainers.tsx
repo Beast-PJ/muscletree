@@ -1,14 +1,20 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaPhone, FaWhatsapp } from "react-icons/fa";
 import sujayImage from "@/Trainers/Sujay-Bhosal.jpeg";
 import nitinImage from "@/Trainers/nitin-patil.jpeg";
 import adarshImage from "@/Trainers/Adarsh.jpeg";
+import atulImage from "@/Trainers/Atul-Buchade.jpeg";
+import adityaImage from "@/Trainers/aditya.jpeg";
+import yogeshImage from "@/Trainers/Yogesh.jpeg";
 
 const Trainers = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  // Default gym phone number (used if trainer doesn't have individual number)
+  const defaultPhone = "919922721114";
 
   const trainers = [
     {
@@ -19,6 +25,7 @@ const Trainers = () => {
       specialization: "Personal Training • Functional Training • Female Fitness • Special Population Training • Piloxing",
       certifications: ["GGFI Gold's Gym Fitness Institute"],
       instagram: "@MavenSujay",
+      phone: "+917385677661" // Add phone number here
     },
     {
       name: "Nitin Patil",
@@ -29,6 +36,7 @@ const Trainers = () => {
       certifications: ["MASTERY IN FUNCTIONAL AND CROSSFIT TRAINING from MAS FITNESS ACADEMY"],
       instagram: "https://www.instagram.com/nitinpatil8252",
       facebook: "https://www.facebook.com/profile.php?id=100094698955013",
+      phone: "+919623214195", // Add phone number here
     },
     {
       name: "Adarsh Jagadhane",
@@ -38,33 +46,47 @@ const Trainers = () => {
       specialization: "Weight Training • Proper Workout Guidance",
       certifications: ["MASTERY IN FUNCTIONAL AND CROSSFIT TRAINING from MAS FITNESS ACADEMY"],
       instagram: "https://www.instagram.com/aadarsh_jagadhane",
+      phone: "+917057713431", // Add phone number here
     },
     {
-      name: "Amit Kulkarni",
-      role: "Cardio & Weight Loss Specialist",
-      experience: "6+ Years",
-      image: null,
-      specialization: "Cardio Training • Weight Loss Programs • HIIT • Endurance Training • Fat Loss",
-      certifications: ["ACE Certified", "Weight Loss Specialist"],
-      instagram: null,
+      name: "Atul Buchade",
+      role: "Personal Trainer",
+      experience: "4 Years",
+      image: atulImage,
+      specialization: "Fat Loss & Lean Muscle Gains",
+      certifications: [
+        "K-11 School of Fitness & Sciences Pune - Diploma in Personal Training",
+        "REPS INDIA CERTIFIED Personal Trainer"
+      ],
+      instagram: "https://www.instagram.com/__i_am_ab_09_",
+      phone: "+919822442534", // Add phone number here
     },
     {
-      name: "Sneha Jadhav",
-      role: "Nutrition & Fitness Coach",
-      experience: "4+ Years",
-      image: null,
-      specialization: "Nutrition Planning • Diet Consultation • Meal Prep • Weight Management • Holistic Health",
-      certifications: ["Certified Nutritionist", "Fitness Nutrition Specialist"],
-      instagram: null,
+      name: "Aditya Rajendra Thombare",
+      role: "Personal Trainer",
+      experience: "5 Years",
+      image: adityaImage,
+      specialization: "Fat Loss & Lean Muscle Gains",
+      certifications: [
+        "K-11 School of Fitness & Sciences Pune - Diploma in Personal Training",
+        "REPS INDIA CERTIFIED Personal Trainer"
+      ],
+      instagram: "https://www.instagram.com/aditya_thombare",
+      facebook: "https://www.facebook.com/search/top?q=Aditya%20Thombare",
+      phone: "+918380912827", // Add phone number here
     },
     {
-      name: "Vikram Shinde",
-      role: "Functional Training Expert",
-      experience: "8+ Years",
-      image: null,
-      specialization: "Functional Training • Athletic Performance • Sports Conditioning • Mobility Training • Injury Prevention",
-      certifications: ["NASM Certified", "Functional Movement Specialist"],
-      instagram: null,
+      name: "Yogesh D. Kounder",
+      role: "Personal Fitness Trainer",
+      experience: "4-5 Years",
+      image: yogeshImage,
+      specialization: "Functional Training • CrossFit Training",
+      certifications: [
+        "Personal Fitness Trainer - Intellectual Fitness & Sports Academy (IFSA)",
+        "MASTER IN FUNCTIONAL AND CROSS FIT TRAINING"
+      ],
+      instagram: "https://www.instagram.com/aesthetic__dany07",
+      phone: "+918007048404", // Add phone number here
     },
   ];
 
@@ -93,21 +115,21 @@ const Trainers = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group perspective"
+              className="group perspective flex"
             >
-              <div className="glass-card rounded-xl overflow-hidden hover-lift transition-all duration-500">
+              <div className="glass-card rounded-xl overflow-hidden hover-lift transition-all duration-500 flex flex-col h-full w-full">
                 {/* Trainer Image */}
-                <div className="relative w-full overflow-hidden bg-background/50">
+                <div className="relative w-full h-80 overflow-hidden bg-background/50 flex-shrink-0">
                   {trainer.image ? (
                     <img
                       src={trainer.image}
                       alt={`${trainer.name} - Certified Fitness Trainer at Muscle Tree Gym Kolhapur`}
-                      className="w-full h-auto object-contain"
+                      className="w-full h-full object-cover"
                       loading="lazy"
                       decoding="async"
                     />
                   ) : (
-                    <div className="w-full h-64 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                       <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                         <span className="text-5xl font-display text-white">
                           {trainer.name.charAt(0)}
@@ -118,7 +140,7 @@ const Trainers = () => {
                 </div>
 
                 {/* Trainer Info */}
-                <div className="p-5 sm:p-6">
+                <div className="p-5 sm:p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-display mb-1 text-gradient">
                     {trainer.name}
                   </h3>
@@ -135,7 +157,7 @@ const Trainers = () => {
                   )}
 
                   {trainer.certifications && (
-                    <div className="mb-4">
+                    <div className="mb-4 flex-grow">
                       <p className="text-sm font-semibold text-foreground mb-2">Certifications:</p>
                       <div className="flex flex-wrap gap-2">
                         {trainer.certifications.map((cert) => (
@@ -150,32 +172,59 @@ const Trainers = () => {
                     </div>
                   )}
 
-                  {/* Social Links */}
-                  <div className="flex gap-3 pt-4 border-t border-border/50">
-                    {trainer.instagram && (
-                      <a
-                        href={trainer.instagram.startsWith('http') ? trainer.instagram : `https://instagram.com/${trainer.instagram.replace('@', '')}`}
+                  {/* Social Links & Contact */}
+                  <div className="pt-4 border-t border-border/50 mt-auto">
+                    <div className="flex gap-3 mb-4">
+                      {trainer.instagram && (
+                        <a
+                          href={trainer.instagram.startsWith('http') ? trainer.instagram : `https://instagram.com/${trainer.instagram.replace('@', '')}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 hover:from-purple-500/30 hover:to-pink-500/30 text-purple-400 hover:text-purple-300 transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110"
+                          title={trainer.instagram}
+                          aria-label={`Follow ${trainer.name} on Instagram`}
+                        >
+                          <FaInstagram className="text-lg" aria-hidden="true" />
+                        </a>
+                      )}
+                      {trainer.facebook && (
+                        <a
+                          href={trainer.facebook}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/20 hover:from-blue-500/30 hover:to-blue-600/30 text-blue-400 hover:text-blue-300 transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110"
+                          title="Facebook Profile"
+                          aria-label={`Follow ${trainer.name} on Facebook`}
+                        >
+                          <FaFacebook className="text-lg" aria-hidden="true" />
+                        </a>
+                      )}
+                    </div>
+                    {/* Call & WhatsApp Buttons */}
+                    <div className="flex gap-3">
+                      <motion.a
+                        href={`tel:+${trainer.phone || defaultPhone}`}
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-primary-foreground px-4 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 min-h-[48px] shadow-lg hover:shadow-glow group"
+                        aria-label={`Call ${trainer.name}`}
+                      >
+                        <FaPhone className="text-base group-hover:rotate-12 transition-transform duration-300" aria-hidden="true" />
+                        <span className="text-sm sm:text-base">Call Now</span>
+                      </motion.a>
+                      <motion.a
+                        href={`https://wa.me/${trainer.phone || defaultPhone}?text=${encodeURIComponent(`Hi ${trainer.name}! I'm interested in personal training at Muscle Tree Gym. Can you provide me with more details?`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                        title={trainer.instagram}
-                        aria-label={`Follow ${trainer.name} on Instagram`}
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-4 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 min-h-[48px] shadow-lg hover:shadow-xl group"
+                        aria-label={`Message ${trainer.name} on WhatsApp`}
                       >
-                        <FaInstagram className="text-xl" />
-                      </a>
-                    )}
-                    {trainer.facebook && (
-                      <a
-                        href={trainer.facebook}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                        title="Facebook Profile"
-                        aria-label={`Follow ${trainer.name} on Facebook`}
-                      >
-                        <FaFacebook className="text-xl" />
-                      </a>
-                    )}
+                        <FaWhatsapp className="text-base group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
+                        <span className="text-sm sm:text-base">WhatsApp</span>
+                      </motion.a>
+                    </div>
                   </div>
                 </div>
               </div>
