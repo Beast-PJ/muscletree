@@ -41,8 +41,8 @@ const Contact = () => {
     {
       icon: FaMapMarkerAlt,
       title: "Location",
-      details: ["Nagalapark / Tarabai Park", "Kolhapur – 416003"],
-      link: "#map",
+      details: ["Nagalapark / Tarabai Park", "Kolhapur, Maharashtra 416003", "India"],
+      link: "https://maps.google.com/?q=Muscle+Tree+Gym+Nagalapark+Kolhapur",
     },
     {
       icon: FaClock,
@@ -114,24 +114,25 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Map Placeholder */}
+            {/* Google Maps Embed */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="glass-card rounded-xl overflow-hidden h-64"
+              id="map"
             >
-              <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                <div className="text-center">
-                  <FaMapMarkerAlt className="text-5xl text-primary mx-auto mb-3" />
-                  <p className="text-foreground font-display">
-                    Nagalapark, Kolhapur
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Click to view on Google Maps
-                  </p>
-                </div>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.1562093312857!2d74.24051431490459!3d16.704962988433634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc1000c20f00001%3A0x0!2zMTbCsDQyJzE3LjkiTiA3NMKwMTQnMjUuOSJF!5e0!3m2!1sen!2sin!4v1706371200000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Muscle Tree Gym Location - Nagalapark, Kolhapur"
+                aria-label="Google Maps showing Muscle Tree Gym location in Nagalapark, Kolhapur"
+              />
             </motion.div>
           </motion.div>
 
@@ -147,10 +148,11 @@ const Contact = () => {
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="contact-name" className="block text-sm font-medium text-foreground mb-2">
                   Your Name *
                 </label>
                 <input
+                  id="contact-name"
                   type="text"
                   required
                   value={formData.name}
@@ -159,14 +161,17 @@ const Contact = () => {
                   }
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground"
                   placeholder="Enter your name"
+                  aria-label="Your name"
+                  aria-required="true"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="contact-email" className="block text-sm font-medium text-foreground mb-2">
                   Email Address *
                 </label>
                 <input
+                  id="contact-email"
                   type="email"
                   required
                   value={formData.email}
@@ -175,14 +180,17 @@ const Contact = () => {
                   }
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground"
                   placeholder="your.email@example.com"
+                  aria-label="Email address"
+                  aria-required="true"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="contact-phone" className="block text-sm font-medium text-foreground mb-2">
                   Phone Number *
                 </label>
                 <input
+                  id="contact-phone"
                   type="tel"
                   required
                   value={formData.phone}
@@ -191,14 +199,17 @@ const Contact = () => {
                   }
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground"
                   placeholder="+91 XXXXX XXXXX"
+                  aria-label="Phone number"
+                  aria-required="true"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="contact-message" className="block text-sm font-medium text-foreground mb-2">
                   Message
                 </label>
                 <textarea
+                  id="contact-message"
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
@@ -206,6 +217,7 @@ const Contact = () => {
                   rows={4}
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground resize-none"
                   placeholder="Tell us about your fitness goals..."
+                  aria-label="Message"
                 />
               </div>
 

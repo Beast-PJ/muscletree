@@ -10,8 +10,8 @@ import {
   FaAppleAlt,
   FaWhatsapp,
 } from "react-icons/fa";
-import strengthImage from "@/assets/strength-training.jpg";
-import cardioImage from "@/assets/cardio-section.jpg";
+import strengthImage from "@/gym interior/8.jpeg";
+import cardioImage from "@/gym interior/12.jpeg";
 
 const Services = () => {
   const ref = useRef(null);
@@ -91,8 +91,10 @@ const Services = () => {
                 <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
                   <img
                     src={service.image}
-                    alt={service.title}
+                    alt={`${service.title} at Muscle Tree Gym Kolhapur - Professional fitness training service`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               )}
@@ -103,7 +105,7 @@ const Services = () => {
                 </div>
                 
                 <h3 className="text-2xl font-display mb-3 text-foreground group-hover:text-gradient transition-colors duration-300">
-                  {service.title}
+                  {service.title} {service.title.includes("Kolhapur") ? "" : "in Kolhapur"}
                 </h3>
                 
                 <p className="text-muted-foreground leading-relaxed">

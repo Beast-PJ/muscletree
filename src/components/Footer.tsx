@@ -121,11 +121,21 @@ const Footer = () => {
           <p className="text-muted-foreground">
             © {currentYear} Muscle Tree Gym. All rights reserved.
           </p>
-          <p className="text-sm text-muted-foreground mt-2">
-            Designed with 💪 for fitness enthusiasts • 
-            <a href="https://muscletreegym.com" className="text-primary hover:underline ml-1">
+          <div className="flex flex-wrap justify-center gap-4 mt-4 text-sm text-muted-foreground">
+            <a href="/privacy-policy" className="text-primary hover:underline">
+              Privacy Policy
+            </a>
+            <span>•</span>
+            <a href="/terms-of-service" className="text-primary hover:underline">
+              Terms of Service
+            </a>
+            <span>•</span>
+            <a href="https://muscletreegym.com" className="text-primary hover:underline">
               muscletreegym.com
             </a>
+          </div>
+          <p className="text-xs text-muted-foreground/70 mt-4">
+            Muscle Tree Gym • Nagalapark, Kolhapur • Best Gym in Kolhapur
           </p>
         </div>
       </div>

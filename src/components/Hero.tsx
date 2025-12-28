@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FaPlay, FaPhone, FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-gym.jpg";
+import heroImage from "@/gym interior/2.jpeg";
 
 const Hero = () => {
   const whatsappMessage = encodeURIComponent(
@@ -14,8 +14,10 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Muscle Tree Gym Interior"
+          alt="Muscle Tree Gym Kolhapur - Premium fitness center in Nagalapark with state-of-the-art equipment"
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background"></div>
       </div>
@@ -60,8 +62,8 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            Kolhapur's premier fitness destination with state-of-the-art equipment,
-            professional trainers, and personalized programs for your fitness goals.
+            Kolhapur's premier fitness destination in Nagalapark with state-of-the-art equipment,
+            certified professional trainers with 9+ years experience, and personalized fitness programs for weight loss, muscle gain, and overall wellness in Kolhapur.
           </motion.p>
 
           <motion.div

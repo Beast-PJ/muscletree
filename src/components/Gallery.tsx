@@ -2,9 +2,21 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { FaTimes } from "react-icons/fa";
-import strengthImage from "@/assets/strength-training.jpg";
-import cardioImage from "@/assets/cardio-section.jpg";
-import heroImage from "@/assets/hero-gym.jpg";
+
+import gymImage8 from "@/gym interior/8.jpeg";
+import gymImage9 from "@/gym interior/9.jpeg";
+import gymImage10 from "@/gym interior/10.jpeg";
+import gymImage11 from "@/gym interior/11.jpeg";
+import gymImage12 from "@/gym interior/12.jpeg";
+import gymImage13 from "@/gym interior/13.jpeg";
+import gymImage14 from "@/gym interior/14.jpeg";
+import gymImage15 from "@/gym interior/15.jpeg";
+import gymImage16 from "@/gym interior/16.jpeg";
+import gymImage17 from "@/gym interior/17.jpeg";
+import gymImage18 from "@/gym interior/18.jpeg";
+import gymImage19 from "@/gym interior/19.jpeg";
+import gymImageWhatsApp1 from "@/gym interior/WhatsApp Image 2025-12-28 at 6.37.26 AM.jpeg";
+import gymImageWhatsApp2 from "@/gym interior/WhatsApp Image 2025-12-28 at 6.38.57 AM.jpeg";
 
 const Gallery = () => {
   const ref = useRef(null);
@@ -12,12 +24,20 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const galleryImages = [
-    { src: heroImage, alt: "Muscle Tree Gym Main Floor", category: "Facility" },
-    { src: strengthImage, alt: "Strength Training Zone", category: "Equipment" },
-    { src: cardioImage, alt: "Cardio Section", category: "Equipment" },
-    { src: strengthImage, alt: "Weight Training Area", category: "Training" },
-    { src: cardioImage, alt: "Modern Cardio Machines", category: "Equipment" },
-    { src: heroImage, alt: "Gym Interior", category: "Facility" },
+    { src: gymImage8, alt: "Premium gym equipment at Muscle Tree Gym Kolhapur - Strength training machines and weights", category: "Equipment" },
+    { src: gymImage9, alt: "Muscle Tree Gym interior view - Modern fitness facility in Nagalapark Kolhapur", category: "Facility" },
+    { src: gymImage10, alt: "Training section at Muscle Tree Gym Kolhapur - Personal training area", category: "Training" },
+    { src: gymImage11, alt: "Fitness area at Muscle Tree Gym - Spacious workout space in Kolhapur", category: "Facility" },
+    { src: gymImage12, alt: "Exercise zone at Muscle Tree Gym Kolhapur - Cardio and functional training equipment", category: "Training" },
+    { src: gymImage13, alt: "Gym facility at Muscle Tree Gym Kolhapur - State-of-the-art fitness center", category: "Facility" },
+    { src: gymImage14, alt: "Workout equipment at Muscle Tree Gym - Modern gym machines in Kolhapur", category: "Equipment" },
+    { src: gymImage15, alt: "Training space at Muscle Tree Gym Kolhapur - Professional workout area", category: "Training" },
+    { src: gymImage16, alt: "Gym interior view at Muscle Tree Gym - Premium fitness center in Nagalapark Kolhapur", category: "Facility" },
+    { src: gymImage17, alt: "Fitness zone at Muscle Tree Gym Kolhapur - Well-equipped training area", category: "Training" },
+    { src: gymImage18, alt: "Equipment section at Muscle Tree Gym - Gym machines and weights in Kolhapur", category: "Equipment" },
+    { src: gymImage19, alt: "Gym floor view at Muscle Tree Gym Kolhapur - Clean and modern fitness facility", category: "Facility" },
+    { src: gymImageWhatsApp1, alt: "Muscle Tree Gym facility in Kolhapur - Best gym in Nagalapark area", category: "Facility" },
+    { src: gymImageWhatsApp2, alt: "Gym interior at Muscle Tree Gym Kolhapur - Premium fitness center", category: "Facility" },
   ];
 
   return (
@@ -52,6 +72,8 @@ const Gallery = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
@@ -105,8 +127,9 @@ const Gallery = () => {
           </button>
           <img
             src={selectedImage}
-            alt="Gallery Preview"
+            alt="Muscle Tree Gym Kolhapur - Gallery Preview"
             className="max-w-full max-h-full object-contain rounded-lg"
+            loading="eager"
           />
         </motion.div>
       )}

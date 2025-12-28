@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
+import sujayImage from "@/trainers/Sujay Bhosale .jpeg";
 
 const Trainers = () => {
   const ref = useRef(null);
@@ -9,32 +10,20 @@ const Trainers = () => {
 
   const trainers = [
     {
-      name: "Rajesh Patil",
-      role: "Head Trainer",
-      experience: "10+ Years",
-      specialization: "Strength & Bodybuilding",
-      certifications: ["ACE Certified", "Sports Nutrition"],
-    },
-    {
-      name: "Priya Deshmukh",
-      role: "Fitness Coach",
-      experience: "7+ Years",
-      specialization: "Weight Loss & Cardio",
-      certifications: ["NASM Certified", "Yoga Instructor"],
-    },
-    {
-      name: "Amit Kulkarni",
-      role: "Personal Trainer",
-      experience: "8+ Years",
-      specialization: "Functional Training",
-      certifications: ["CrossFit Level 2", "Olympic Lifting"],
-    },
-    {
-      name: "Sneha Jadhav",
-      role: "Nutrition Expert",
-      experience: "5+ Years",
-      specialization: "Diet & Nutrition",
-      certifications: ["Dietitian", "Sports Nutrition"],
+      name: "Sujay Bhosale",
+      role: "Certified Fitness Trainer",
+      experience: "9+ Years",
+      image: sujayImage,
+      education: "GGFI – Gold's Gym Fitness Institute (2017)",
+      specializations: [
+        "Personal Fitness Training",
+        "Special Population Training",
+        "Female Fitness Training",
+        "Piloxing",
+        "Master in Functional Training",
+      ],
+      nutritionExpertise: "Fat Loss & Muscle Gain",
+      instagram: "@MavenSujay",
     },
   ];
 
@@ -56,7 +45,7 @@ const Trainers = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {trainers.map((trainer, index) => (
             <motion.div
               key={trainer.name}
@@ -66,16 +55,26 @@ const Trainers = () => {
               className="group perspective"
             >
               <div className="glass-card rounded-xl overflow-hidden hover-lift transition-all duration-500">
-                {/* Trainer Image Placeholder */}
-                <div className="relative h-64 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-                  <div className="relative z-10 text-center">
-                    <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-accent mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-5xl font-display text-white">
-                        {trainer.name.charAt(0)}
-                      </span>
+                {/* Trainer Image */}
+                <div className="relative h-64 overflow-hidden">
+                  {trainer.image ? (
+                    <img
+                      src={trainer.image}
+                      alt={`${trainer.name} - Certified Fitness Trainer at Muscle Tree Gym Kolhapur`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                      <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                        <span className="text-5xl font-display text-white">
+                          {trainer.name.charAt(0)}
+                        </span>
+                      </div>
                     </div>
-                  </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent"></div>
                 </div>
 
                 {/* Trainer Info */}
@@ -88,45 +87,49 @@ const Trainers = () => {
                     {trainer.experience} Experience
                   </p>
 
-                  <div className="mb-4">
-                    <p className="text-sm font-semibold text-foreground mb-2">Specialization:</p>
-                    <p className="text-sm text-muted-foreground">{trainer.specialization}</p>
-                  </div>
-
-                  <div className="mb-4">
-                    <p className="text-sm font-semibold text-foreground mb-2">Certifications:</p>
-                    <div className="flex flex-wrap gap-2">
-                      {trainer.certifications.map((cert) => (
-                        <span
-                          key={cert}
-                          className="text-xs bg-primary/20 text-primary px-3 py-1 rounded-full"
-                        >
-                          {cert}
-                        </span>
-                      ))}
+                  {trainer.education && (
+                    <div className="mb-4">
+                      <p className="text-sm font-semibold text-foreground mb-1">Education:</p>
+                      <p className="text-sm text-muted-foreground">{trainer.education}</p>
                     </div>
-                  </div>
+                  )}
+
+                  {trainer.specializations && (
+                    <div className="mb-4">
+                      <p className="text-sm font-semibold text-foreground mb-2">Specializations:</p>
+                      <div className="flex flex-wrap gap-2">
+                        {trainer.specializations.map((spec) => (
+                          <span
+                            key={spec}
+                            className="text-xs bg-primary/20 text-primary px-3 py-1 rounded-full"
+                          >
+                            {spec}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {trainer.nutritionExpertise && (
+                    <div className="mb-4">
+                      <p className="text-sm font-semibold text-foreground mb-1">Nutrition Expertise:</p>
+                      <p className="text-sm text-muted-foreground">{trainer.nutritionExpertise}</p>
+                    </div>
+                  )}
 
                   {/* Social Links */}
                   <div className="flex gap-3 pt-4 border-t border-border/50">
-                    <a
-                      href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <FaInstagram className="text-xl" />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <FaFacebook className="text-xl" />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <FaTwitter className="text-xl" />
-                    </a>
+                    {trainer.instagram && (
+                      <a
+                        href={`https://instagram.com/${trainer.instagram.replace('@', '')}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        title={trainer.instagram}
+                      >
+                        <FaInstagram className="text-xl" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
