@@ -3,6 +3,8 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 import sujayImage from "@/Trainers/Sujay-Bhosal.jpeg";
+import nitinImage from "@/Trainers/nitin-patil.jpeg";
+import adarshImage from "@/Trainers/Adarsh.jpeg";
 
 const Trainers = () => {
   const ref = useRef(null);
@@ -19,22 +21,23 @@ const Trainers = () => {
       instagram: "@MavenSujay",
     },
     {
-      name: "Rajesh Patil",
-      role: "Strength & Conditioning Coach",
-      experience: "7+ Years",
-      image: null,
-      specialization: "Strength Training • Powerlifting • Bodybuilding • Muscle Gain Programs",
-      certifications: ["Certified Strength Coach", "ISSA Certified"],
-      instagram: null,
+      name: "Nitin Patil",
+      role: "Functional & CrossFit Trainer",
+      experience: "6 Years Weight Training • 3 Years Personal Training",
+      image: nitinImage,
+      specialization: "Functional Training • CrossFit Training",
+      certifications: ["MASTERY IN FUNCTIONAL AND CROSSFIT TRAINING from MAS FITNESS ACADEMY"],
+      instagram: "https://www.instagram.com/nitinpatil8252",
+      facebook: "https://www.facebook.com/profile.php?id=100094698955013",
     },
     {
-      name: "Priya Deshmukh",
-      role: "Yoga & Wellness Instructor",
-      experience: "5+ Years",
-      image: null,
-      specialization: "Yoga • Pilates • Flexibility Training • Stress Management • Meditation",
-      certifications: ["RYT 200 Certified", "Pilates Instructor"],
-      instagram: null,
+      name: "Adarsh Jagadhane",
+      role: "Weight Training Specialist",
+      experience: "3 Years Weight Training Experience",
+      image: adarshImage,
+      specialization: "Weight Training • Proper Workout Guidance",
+      certifications: ["MASTERY IN FUNCTIONAL AND CROSSFIT TRAINING from MAS FITNESS ACADEMY"],
+      instagram: "https://www.instagram.com/aadarsh_jagadhane",
     },
     {
       name: "Amit Kulkarni",
@@ -151,7 +154,7 @@ const Trainers = () => {
                   <div className="flex gap-3 pt-4 border-t border-border/50">
                     {trainer.instagram && (
                       <a
-                        href={`https://instagram.com/${trainer.instagram.replace('@', '')}`}
+                        href={trainer.instagram.startsWith('http') ? trainer.instagram : `https://instagram.com/${trainer.instagram.replace('@', '')}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
@@ -159,6 +162,18 @@ const Trainers = () => {
                         aria-label={`Follow ${trainer.name} on Instagram`}
                       >
                         <FaInstagram className="text-xl" />
+                      </a>
+                    )}
+                    {trainer.facebook && (
+                      <a
+                        href={trainer.facebook}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        title="Facebook Profile"
+                        aria-label={`Follow ${trainer.name} on Facebook`}
+                      >
+                        <FaFacebook className="text-xl" />
                       </a>
                     )}
                   </div>
