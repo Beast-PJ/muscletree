@@ -22,7 +22,7 @@ const FloatingCTA = () => {
   );
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-4">
+    <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-40 flex flex-col gap-3 sm:gap-4 max-w-[calc(100vw-2rem)]">
       {/* WhatsApp Appointment Button */}
       <motion.a
         href={`https://wa.me/919922721114?text=${whatsappMessage}`}
@@ -32,10 +32,11 @@ const FloatingCTA = () => {
         animate={{ scale: 1 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
+        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-green-500 hover:bg-green-600 text-white flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 min-w-[48px] min-h-[48px]"
         title="Book Appointment via WhatsApp"
+        aria-label="Book Appointment via WhatsApp"
       >
-        <FaWhatsapp className="text-2xl" />
+        <FaWhatsapp className="text-xl sm:text-2xl" />
       </motion.a>
 
       {/* Scroll to Top Button */}
@@ -47,9 +48,10 @@ const FloatingCTA = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="w-14 h-14 rounded-full bg-gradient-to-r from-primary to-accent text-white flex items-center justify-center shadow-lg hover:shadow-glow transition-all duration-300"
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-primary to-accent text-white flex items-center justify-center shadow-lg hover:shadow-glow transition-all duration-300 min-w-[48px] min-h-[48px]"
+          aria-label="Scroll to top"
         >
-          <FaArrowUp className="text-xl" />
+          <FaArrowUp className="text-lg sm:text-xl" />
         </motion.button>
       )}
     </div>

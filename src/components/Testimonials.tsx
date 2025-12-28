@@ -59,18 +59,18 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" ref={ref} className="py-20 bg-gradient-to-b from-secondary/20 to-background">
-      <div className="container mx-auto px-4">
+    <section id="testimonials" ref={ref} className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-secondary/20 to-background w-full max-w-full overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-display mb-4 text-gradient">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display mb-3 sm:mb-4 text-gradient px-4">
             Success Stories
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Don't just take our word for it. Here's what our members have to say about
             their transformation journey at Muscle Tree Gym.
           </p>
@@ -83,8 +83,8 @@ const Testimonials = () => {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="glass-card rounded-2xl p-8 md:p-12 relative">
-            <FaQuoteLeft className="text-5xl text-primary/20 absolute top-8 left-8" />
+          <div className="glass-card rounded-2xl p-6 sm:p-8 md:p-12 relative">
+            <FaQuoteLeft className="text-4xl sm:text-5xl text-primary/20 absolute top-4 sm:top-8 left-4 sm:left-8" />
             
             <div className="relative z-10">
               {/* Stars */}
@@ -99,7 +99,7 @@ const Testimonials = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="text-lg md:text-xl text-foreground/90 text-center mb-8 leading-relaxed"
+                className="text-base sm:text-lg md:text-xl text-foreground/90 text-center mb-6 sm:mb-8 leading-relaxed px-4"
               >
                 "{testimonials[currentIndex].text}"
               </motion.p>
@@ -112,10 +112,10 @@ const Testimonials = () => {
                 transition={{ duration: 0.3, delay: 0.2 }}
                 className="text-center"
               >
-                <p className="text-xl font-display text-gradient mb-1">
+                <p className="text-lg sm:text-xl font-display text-gradient mb-1">
                   {testimonials[currentIndex].name}
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-sm sm:text-base text-muted-foreground">
                   {testimonials[currentIndex].role}
                 </p>
               </motion.div>
@@ -161,12 +161,12 @@ const Testimonials = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <div className="inline-flex items-center gap-2 glass-card px-8 py-4 rounded-full">
+          <div className="inline-flex flex-wrap items-center justify-center gap-2 glass-card px-6 sm:px-8 py-3 sm:py-4 rounded-full">
             <div className="flex gap-1">
               {renderStars(5)}
             </div>
-            <span className="text-2xl font-display text-gradient">4.5/5</span>
-            <span className="text-muted-foreground">• Based on 200+ reviews</span>
+            <span className="text-xl sm:text-2xl font-display text-gradient">4.5/5</span>
+            <span className="text-xs sm:text-sm text-muted-foreground">• Based on 200+ reviews</span>
           </div>
         </motion.div>
       </div>

@@ -60,32 +60,32 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="plans" ref={ref} className="py-20 bg-gradient-to-b from-background to-secondary/20">
-      <div className="container mx-auto px-4">
+    <section id="plans" ref={ref} className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-background to-secondary/20 w-full max-w-full overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-display mb-4 text-gradient">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display mb-3 sm:mb-4 text-gradient px-4">
             Membership Plans
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Choose the perfect plan that fits your fitness goals and budget.
             All plans include access to our world-class facilities.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`glass-card rounded-2xl p-8 relative ${
-                plan.popular ? "ring-2 ring-primary scale-105" : ""
+              className={`glass-card rounded-2xl p-6 sm:p-8 relative ${
+                plan.popular ? "ring-2 ring-primary md:scale-105" : ""
               }`}
             >
               {plan.popular && (
@@ -97,19 +97,19 @@ const Pricing = () => {
                 </div>
               )}
 
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-display mb-4 text-gradient">
+              <div className="text-center mb-6 sm:mb-8">
+                <h3 className="text-2xl sm:text-3xl font-display mb-3 sm:mb-4 text-gradient">
                   {plan.name}
                 </h3>
                 <div className="mb-2">
-                  <span className="text-5xl font-display text-foreground">
+                  <span className="text-4xl sm:text-5xl font-display text-foreground">
                     {plan.price}
                   </span>
                 </div>
-                <p className="text-muted-foreground">{plan.period}</p>
+                <p className="text-sm sm:text-base text-muted-foreground">{plan.period}</p>
               </div>
 
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -122,7 +122,7 @@ const Pricing = () => {
 
               <Button
                 size="lg"
-                className={`w-full ${
+                className={`w-full min-h-[48px] ${
                   plan.popular
                     ? "bg-gradient-to-r from-primary to-accent hover:shadow-glow"
                     : "bg-secondary hover:bg-secondary/80"

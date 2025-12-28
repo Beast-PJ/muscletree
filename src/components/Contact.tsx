@@ -56,24 +56,24 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" ref={ref} className="py-20 bg-gradient-to-b from-background to-secondary/20">
-      <div className="container mx-auto px-4">
+    <section id="contact" ref={ref} className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-background to-secondary/20 w-full max-w-full overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-display mb-4 text-gradient">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display mb-3 sm:mb-4 text-gradient px-4">
             Get In Touch
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Ready to start your fitness journey? Contact us today for a free consultation
             and gym tour. We're here to help you achieve your goals!
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 max-w-6xl mx-auto">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -88,7 +88,7 @@ const Contact = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="glass-card p-6 rounded-xl hover-lift"
+                  className="glass-card p-5 sm:p-6 rounded-xl hover-lift"
                 >
                   <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-4">
                     <info.icon className="text-xl text-white" />
@@ -114,24 +114,25 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Map Placeholder */}
+            {/* Google Maps Embed */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="glass-card rounded-xl overflow-hidden h-64"
+              className="glass-card rounded-xl overflow-hidden h-48 sm:h-56 md:h-64"
+              id="map"
             >
-              <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                <div className="text-center">
-                  <FaMapMarkerAlt className="text-5xl text-primary mx-auto mb-3" />
-                  <p className="text-foreground font-display">
-                    Nagalapark, Kolhapur
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Click to view on Google Maps
-                  </p>
-                </div>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.1562093312857!2d74.24051431490459!3d16.704962988433634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc1000c20f00001%3A0x0!2zMTbCsDQyJzE3LjkiTiA3NMKwMTQnMjUuOSJF!5e0!3m2!1sen!2sin!4v1706371200000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Muscle Tree Gym Location - Nagalapark, Kolhapur"
+                aria-label="Google Maps showing Muscle Tree Gym location in Nagalapark, Kolhapur"
+              />
             </motion.div>
           </motion.div>
 
@@ -140,7 +141,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="glass-card p-8 rounded-2xl"
+            className="glass-card p-6 sm:p-8 rounded-2xl"
           >
             <h3 className="text-2xl font-display mb-6 text-gradient">
               Send Us a Message
@@ -157,8 +158,10 @@ const Contact = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground min-h-[48px]"
                   placeholder="Enter your name"
+                  aria-label="Your name"
+                  aria-required="true"
                 />
               </div>
 
@@ -173,8 +176,10 @@ const Contact = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground min-h-[48px]"
                   placeholder="your.email@example.com"
+                  aria-label="Email address"
+                  aria-required="true"
                 />
               </div>
 
@@ -189,8 +194,10 @@ const Contact = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, phone: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground min-h-[48px]"
                   placeholder="+91 XXXXX XXXXX"
+                  aria-label="Phone number"
+                  aria-required="true"
                 />
               </div>
 
@@ -204,15 +211,16 @@ const Contact = () => {
                     setFormData({ ...formData, message: e.target.value })
                   }
                   rows={4}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground resize-none"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground resize-none min-h-[120px]"
                   placeholder="Tell us about your fitness goals..."
+                  aria-label="Message"
                 />
               </div>
 
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-gradient-to-r from-primary to-accent hover:shadow-glow"
+                className="w-full bg-gradient-to-r from-primary to-accent hover:shadow-glow min-h-[48px]"
               >
                 <FaPaperPlane className="mr-2" />
                 Send Message

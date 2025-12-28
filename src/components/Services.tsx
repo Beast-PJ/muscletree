@@ -10,8 +10,8 @@ import {
   FaAppleAlt,
   FaWhatsapp,
 } from "react-icons/fa";
-import strengthImage from "@/assets/strength-training.jpg";
-import cardioImage from "@/assets/cardio-section.jpg";
+import strengthImage from "@/gym interior/8.jpeg";
+import cardioImage from "@/gym interior/12.jpeg";
 
 const Services = () => {
   const ref = useRef(null);
@@ -61,38 +61,40 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" ref={ref} className="py-20 bg-gradient-to-b from-secondary/20 to-background">
-      <div className="container mx-auto px-4">
+    <section id="services" ref={ref} className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-secondary/20 to-background w-full max-w-full overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-display mb-4 text-gradient">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display mb-3 sm:mb-4 text-gradient px-4">
             Our Services
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Comprehensive fitness programs designed to help you achieve your goals,
             whether it's building muscle, losing weight, or improving overall health.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="glass-card p-6 rounded-xl hover-lift group overflow-hidden relative"
+              className="glass-card p-5 sm:p-6 rounded-xl hover-lift group overflow-hidden relative"
             >
               {service.image && (
                 <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
                   <img
                     src={service.image}
-                    alt={service.title}
+                    alt={`${service.title} at Muscle Tree Gym Kolhapur - Professional fitness training service`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               )}
@@ -122,10 +124,10 @@ const Services = () => {
           className="mt-16 text-center"
         >
           <div className="glass-card p-8 md:p-12 rounded-2xl max-w-4xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-display mb-4 text-gradient">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-display mb-3 sm:mb-4 text-gradient">
               Ready to Start Your Journey?
             </h3>
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6">
               Join Muscle Tree Gym today and get access to all our premium services and facilities.
             </p>
             <motion.a
@@ -134,7 +136,7 @@ const Services = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-lg font-display text-lg hover:shadow-glow transition-all duration-300 inline-flex items-center gap-2"
+              className="bg-gradient-to-r from-primary to-accent text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-display text-base sm:text-lg hover:shadow-glow transition-all duration-300 inline-flex items-center gap-2 min-h-[48px]"
             >
               <FaWhatsapp />
               Book Appointment Now

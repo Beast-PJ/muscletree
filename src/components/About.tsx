@@ -56,8 +56,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" ref={ref} className="py-20 bg-gradient-to-b from-background to-secondary/20">
-      <div className="container mx-auto px-4">
+    <section id="about" ref={ref} className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-background to-secondary/20 w-full max-w-full overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -74,24 +74,24 @@ const About = () => {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-card p-6 text-center hover-lift rounded-lg"
+              className="glass-card p-4 sm:p-6 text-center hover-lift rounded-lg"
             >
-              <stat.icon className="text-4xl md:text-5xl text-primary mx-auto mb-4" />
-              <div className="text-3xl md:text-4xl font-display text-gradient mb-2">
+              <stat.icon className="text-3xl sm:text-4xl md:text-5xl text-primary mx-auto mb-3 sm:mb-4" />
+              <div className="text-2xl sm:text-3xl md:text-4xl font-display text-gradient mb-1 sm:mb-2">
                 {stat.label === "Customer Rating" ? (
                   <span>{stat.value}</span>
                 ) : (
                   <AnimatedCounter end={stat.value} />
                 )}
               </div>
-              <p className="text-sm md:text-base text-muted-foreground">{stat.label}</p>
+              <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-tight">{stat.label}</p>
             </motion.div>
           ))}
         </div>
