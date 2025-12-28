@@ -203,7 +203,7 @@ const Trainers = () => {
                     {/* Call & WhatsApp Buttons */}
                     <div className="flex gap-3">
                       <motion.a
-                        href={`tel:+${trainer.phone || defaultPhone}`}
+                        href={`tel:${trainer.phone?.replace(/\+/g, '') || defaultPhone}`}
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.98 }}
                         className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-primary-foreground px-4 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 min-h-[48px] shadow-lg hover:shadow-glow group"
@@ -213,7 +213,7 @@ const Trainers = () => {
                         <span className="text-sm sm:text-base">Call Now</span>
                       </motion.a>
                       <motion.a
-                        href={`https://wa.me/${trainer.phone || defaultPhone}?text=${encodeURIComponent(`Hi ${trainer.name}! I'm interested in personal training at Muscle Tree Gym. Can you provide me with more details?`)}`}
+                        href={`https://wa.me/${trainer.phone?.replace(/\+/g, '') || defaultPhone}?text=${encodeURIComponent(`Hi ${trainer.name}! I'm interested in personal training at Muscle Tree Gym. Can you provide me with more details?`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05, y: -2 }}

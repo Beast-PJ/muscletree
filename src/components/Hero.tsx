@@ -35,7 +35,7 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Muscle Tree Gym
+            Best Gym in Kolhapur - Muscle Tree Gym
           </motion.h1>
           
           <motion.p
@@ -62,8 +62,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            Kolhapur's premier fitness destination in Nagalapark with state-of-the-art equipment,
-            certified professional trainers with 9+ years experience, and personalized fitness programs for weight loss, muscle gain, and overall wellness in Kolhapur.
+            Join Muscle Tree Gym, the best gym in Kolhapur located in Nagalapark. We offer state-of-the-art equipment, certified personal trainers with 9+ years experience, and personalized fitness programs for weight loss, muscle gain, and functional training. Your premier fitness destination in Kolhapur.
           </motion.p>
 
           <motion.div

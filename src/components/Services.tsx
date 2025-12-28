@@ -69,13 +69,13 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display mb-3 sm:mb-4 text-gradient px-4">
-            Our Services
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
-            Comprehensive fitness programs designed to help you achieve your goals,
-            whether it's building muscle, losing weight, or improving overall health.
-          </p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display mb-3 sm:mb-4 text-gradient px-4">
+                Fitness Services at Muscle Tree Gym Kolhapur
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
+                Comprehensive fitness programs in Kolhapur designed to help you achieve your goals,
+                whether it's building muscle, losing weight, or improving overall health. Our certified trainers in Kolhapur provide expert guidance for all fitness levels.
+              </p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

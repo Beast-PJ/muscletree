@@ -45,14 +45,14 @@ const About = () => {
   ];
 
   const features = [
-    "Spacious and well-equipped facility",
-    "Latest state-of-the-art machines",
-    "Dedicated strength training zone",
-    "Modern cardio section",
-    "Professional & friendly trainers",
-    "Personalized fitness plans",
-    "Result-oriented programs",
-    "Clean and premium environment",
+    "Spacious and well-equipped facility in Kolhapur's Nagalapark area",
+    "Latest state-of-the-art machines for all workout types",
+    "Dedicated strength training zone for powerlifters and bodybuilders",
+    "Modern cardio section for endurance and fat loss",
+    "Professional & friendly certified trainers with 9+ years experience",
+    "Personalized fitness plans tailored to your goals",
+    "Result-oriented programs for guaranteed progress",
+    "Clean and premium environment in Kolhapur",
   ];
 
   return (
@@ -65,11 +65,10 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-display mb-4 text-gradient">
-            About Muscle Tree Gym
+            Why Muscle Tree Gym is the Best Gym in Kolhapur
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            One of Kolhapur's top-rated gyms, dedicated to helping you achieve your fitness goals
-            through personalized training, expert guidance, and world-class facilities.
+            Muscle Tree Gym is Kolhapur's premier fitness destination, recognized as the best gym in Kolhapur. Located in Nagalapark, we're dedicated to helping you achieve your fitness goals through personalized training, expert guidance from certified trainers with 9+ years experience, and world-class facilities with state-of-the-art equipment.
           </p>
         </motion.div>
 
@@ -104,7 +103,7 @@ const About = () => {
           className="glass-card p-8 md:p-12 rounded-2xl"
         >
           <h3 className="text-3xl md:text-4xl font-display mb-8 text-center text-gradient">
-            Why Choose Muscle Tree Gym?
+            Why Choose Muscle Tree Gym in Kolhapur?
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
             {features.map((feature, index) => (
@@ -129,12 +128,12 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-12 text-center max-w-4xl mx-auto"
         >
-          <h3 className="text-2xl md:text-3xl font-display mb-4 text-accent">Our Mission</h3>
+          <h3 className="text-2xl md:text-3xl font-display mb-4 text-accent">Our Mission at Muscle Tree Gym Kolhapur</h3>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            At Muscle Tree Gym, we're committed to providing a premium fitness experience that
+            At Muscle Tree Gym, Kolhapur's best fitness center, we're committed to providing a premium fitness experience that
             combines cutting-edge equipment, expert training, and a supportive community. Our goal
             is to help every member transform their body and build lasting healthy habits in a
-            clean, motivating environment.
+            clean, motivating environment in Kolhapur. Whether you're looking for weight loss, muscle gain, or overall wellness, we're here to guide you every step of the way.
           </p>
         </motion.div>
       </div>
