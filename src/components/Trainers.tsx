@@ -18,6 +18,51 @@ const Trainers = () => {
       certifications: ["GGFI Gold's Gym Fitness Institute"],
       instagram: "@MavenSujay",
     },
+    {
+      name: "Rajesh Patil",
+      role: "Strength & Conditioning Coach",
+      experience: "7+ Years",
+      image: null,
+      specialization: "Strength Training • Powerlifting • Bodybuilding • Muscle Gain Programs",
+      certifications: ["Certified Strength Coach", "ISSA Certified"],
+      instagram: null,
+    },
+    {
+      name: "Priya Deshmukh",
+      role: "Yoga & Wellness Instructor",
+      experience: "5+ Years",
+      image: null,
+      specialization: "Yoga • Pilates • Flexibility Training • Stress Management • Meditation",
+      certifications: ["RYT 200 Certified", "Pilates Instructor"],
+      instagram: null,
+    },
+    {
+      name: "Amit Kulkarni",
+      role: "Cardio & Weight Loss Specialist",
+      experience: "6+ Years",
+      image: null,
+      specialization: "Cardio Training • Weight Loss Programs • HIIT • Endurance Training • Fat Loss",
+      certifications: ["ACE Certified", "Weight Loss Specialist"],
+      instagram: null,
+    },
+    {
+      name: "Sneha Jadhav",
+      role: "Nutrition & Fitness Coach",
+      experience: "4+ Years",
+      image: null,
+      specialization: "Nutrition Planning • Diet Consultation • Meal Prep • Weight Management • Holistic Health",
+      certifications: ["Certified Nutritionist", "Fitness Nutrition Specialist"],
+      instagram: null,
+    },
+    {
+      name: "Vikram Shinde",
+      role: "Functional Training Expert",
+      experience: "8+ Years",
+      image: null,
+      specialization: "Functional Training • Athletic Performance • Sports Conditioning • Mobility Training • Injury Prevention",
+      certifications: ["NASM Certified", "Functional Movement Specialist"],
+      instagram: null,
+    },
   ];
 
   return (
@@ -38,7 +83,7 @@ const Trainers = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {trainers.map((trainer, index) => (
             <motion.div
               key={trainer.name}
@@ -49,17 +94,17 @@ const Trainers = () => {
             >
               <div className="glass-card rounded-xl overflow-hidden hover-lift transition-all duration-500">
                 {/* Trainer Image */}
-                <div className="relative h-56 sm:h-64 overflow-hidden">
+                <div className="relative w-full overflow-hidden bg-background/50">
                   {trainer.image ? (
                     <img
                       src={trainer.image}
                       alt={`${trainer.name} - Certified Fitness Trainer at Muscle Tree Gym Kolhapur`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-auto object-contain"
                       loading="lazy"
                       decoding="async"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                    <div className="w-full h-64 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                       <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                         <span className="text-5xl font-display text-white">
                           {trainer.name.charAt(0)}
@@ -67,7 +112,6 @@ const Trainers = () => {
                       </div>
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent"></div>
                 </div>
 
                 {/* Trainer Info */}
@@ -120,6 +164,7 @@ const Trainers = () => {
                   </div>
                 </div>
               </div>
+              
             </motion.div>
           ))}
         </div>
