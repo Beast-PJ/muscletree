@@ -8,6 +8,8 @@ import adarshImage from "@/Trainers/Adarsh.jpeg";
 import atulImage from "@/Trainers/Atul-Buchade.jpeg";
 import adityaImage from "@/Trainers/aditya.jpeg";
 import yogeshImage from "@/Trainers/Yogesh.jpeg";
+import parasImage from "@/Trainers/paras sannaki.jpeg";
+import mahekImage from "@/Trainers/Mahek.jpeg";
 
 const Trainers = () => {
   const ref = useRef(null);
@@ -41,7 +43,7 @@ const Trainers = () => {
     {
       name: "Adarsh Jagadhane",
       role: "Weight Training Specialist",
-      experience: "3 Years Weight Training Experience",
+      experience: "3 Years Weight Training",
       image: adarshImage,
       specialization: "Weight Training • Proper Workout Guidance",
       certifications: ["MASTERY IN FUNCTIONAL AND CROSSFIT TRAINING from MAS FITNESS ACADEMY"],
@@ -87,6 +89,26 @@ const Trainers = () => {
       ],
       instagram: "https://www.instagram.com/aesthetic__dany07",
       phone: "+918007048404", // Add phone number here
+    },
+    {
+      name: "Paras Sannaki",
+      role: "Personal Trainer",
+      experience: "1+ Year",
+      image: parasImage,
+      specialization: "Personal Training • Core Training • Functional Training • Nutrition Exercise • Fat Loss & Muscle Gain",
+      certifications: [],
+      instagram: "@Paras_sannaki_4",
+      phone: "+919922721114" // Using default gym phone
+    },
+    {
+      name: "Mahek Nagpal",
+      role: "Women's Fitness Trainer",
+      experience: "1 Year",
+      image: mahekImage,
+      specialization: "Women's Fitness Training • Fat Loss • Strength Training • Functional Workout • Diet & Nutrition Guidance",
+      certifications: [],
+      instagram: "https://www.instagram.com/nagpal_mahek_67?igsh=czg3cDZtaGdvdGR6",
+      phone: "+918605147315"
     },
   ];
 
@@ -228,7 +250,7 @@ const Trainers = () => {
                   </div>
                 </div>
               </div>
-              
+
             </motion.div>
           ))}
         </div>

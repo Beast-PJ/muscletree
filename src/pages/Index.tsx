@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import SEO from "@/components/SEO";
 import FAQ from "@/components/FAQ";
+import Watermark from "@/components/Watermark";
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
       <Testimonials />
       <FAQ />
       <Contact />
+      <Watermark />
       <Footer />
       <FloatingCTA />
     </div>
