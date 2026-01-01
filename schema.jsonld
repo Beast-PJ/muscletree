@@ -1,0 +1,188 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "LocalBusiness",
+            "@id": "https://muscletreegym.com/#localbusiness",
+            "name": "MUSCLE TREE GYM",
+            "alternateName": "Muscle Tree Gym Kolhapur",
+            "description": "Premier fitness center in Nagalapark, Kolhapur offering personal training, group classes, and modern gym equipment.",
+            "url": "https://muscletreegym.com",
+            "telephone": "+91 99227 21114",
+            "additionalTelephone": "+91 81491 99911",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Nagalapark",
+                "addressLocality": "Kolhapur",
+                "addressRegion": "Maharashtra",
+                "postalCode": "416003",
+                "addressCountry": "IN"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "16.7028",
+                "longitude": "74.2396"
+            },
+            "openingHours": [
+                "Mo-Fr 05:00-23:00",
+                "Sa-Su 06:00-22:00"
+            ],
+            "priceRange": "$$",
+            "paymentAccepted": [
+                "Cash",
+                "Credit Card",
+                "Debit Card",
+                "UPI"
+            ],
+            "currenciesAccepted": "INR",
+            "image": [
+                "https://muscletreegym.com/images/gym-interior.jpg",
+                "https://muscletreegym.com/images/gym-equipment.jpg",
+                "https://muscletreegym.com/images/trainer-team.jpg"
+            ],
+            "logo": "https://muscletreegym.com/logo.png",
+            "sameAs": [
+                "https://www.instagram.com/muscletreegym",
+                "https://www.facebook.com/muscletreegym",
+                "https://wa.me/919922721114"
+            ],
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Gym Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Personal Training",
+                            "description": "One-on-one personal training sessions with certified trainers"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Group Classes",
+                            "description": "Group fitness classes including HIIT, Yoga, Zumba, and more"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Strength Training",
+                            "description": "Progressive strength training programs with modern equipment"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Women's Fitness",
+                            "description": "Specialized fitness programs for women with female trainers"
+                        }
+                    }
+                ]
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "127",
+                "bestRating": "5"
+            },
+            "servesCuisine": "Fitness and Nutrition Services",
+            "hasMap": "https://maps.google.com/maps?q=Muscle+Tree+Gym+Nagalapark+Kolhapur"
+        },
+        {
+            "@type": "FitnessCenter",
+            "@id": "https://muscletreegym.com/#fitnesscenter",
+            "name": "MUSCLE TREE GYM",
+            "url": "https://muscletreegym.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Nagalapark",
+                "addressLocality": "Kolhapur",
+                "addressRegion": "Maharashtra",
+                "postalCode": "416003",
+                "addressCountry": "IN"
+            },
+            "telephone": "+91 99227 21114",
+            "openingHours": [
+                "Mo-Fr 05:00-23:00",
+                "Sa-Su 06:00-22:00"
+            ],
+            "amenityFeature": [
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Personal Training",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Group Classes",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Modern Equipment",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Women's Only Area",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Nutrition Counseling",
+                    "value": true
+                }
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://muscletreegym.com/#website",
+            "url": "https://muscletreegym.com",
+            "name": "Muscle Tree Gym Kolhapur",
+            "description": "Best gym in Nagalapark, Kolhapur offering personal training, group classes, and modern fitness equipment",
+            "publisher": {
+                "@id": "https://muscletreegym.com/#localbusiness"
+            },
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://muscletreegym.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://muscletreegym.com/faq/#faqpage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What are the gym timings at Muscle Tree Gym Kolhapur?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Muscle Tree Gym is open Monday to Friday from 5:00 AM to 11:00 PM, and Saturday to Sunday from 6:00 AM to 10:00 PM."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much does gym membership cost in Kolhapur?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We offer flexible membership plans starting from ₹1,500/month. Contact us at +91 99227 21114 for current offers and discounts."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you offer personal training services?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, we have certified personal trainers specializing in weight loss, strength training, women's fitness, and nutrition programs."
+                    }
+                }
+            ]
+        }
+    ]
+}
