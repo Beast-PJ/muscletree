@@ -8,7 +8,7 @@ import adarshImage from "@/Trainers/Adarsh.jpeg";
 import atulImage from "@/Trainers/Atul-Buchade.jpeg";
 import adityaImage from "@/Trainers/aditya.jpeg";
 import yogeshImage from "@/Trainers/Yogesh.jpeg";
-import parasImage from "@/Trainers/paras sannaki.jpeg";
+import nikhilImage from "@/Trainers/Niikhil.jpeg";
 import mahekImage from "@/Trainers/Mahek.jpeg";
 
 const Trainers = () => {
@@ -64,20 +64,6 @@ const Trainers = () => {
       phone: "+919822442534", // Add phone number here
     },
     {
-      name: "Aditya Rajendra Thombare",
-      role: "Personal Trainer",
-      experience: "5 Years",
-      image: adityaImage,
-      specialization: "Fat Loss & Lean Muscle Gains",
-      certifications: [
-        "K-11 School of Fitness & Sciences Pune - Diploma in Personal Training",
-        "REPS INDIA CERTIFIED Personal Trainer"
-      ],
-      instagram: "https://www.instagram.com/aditya_thombare",
-      facebook: "https://www.facebook.com/search/top?q=Aditya%20Thombare",
-      phone: "+918380912827", // Add phone number here
-    },
-    {
       name: "Yogesh D. Kounder",
       role: "Personal Fitness Trainer",
       experience: "4-5 Years",
@@ -91,14 +77,14 @@ const Trainers = () => {
       phone: "+918007048404", // Add phone number here
     },
     {
-      name: "Paras Sannaki",
+      name: "Niikhil Bhaagwat",
       role: "Personal Trainer",
-      experience: "1+ Year",
-      image: parasImage,
-      specialization: "Personal Training • Core Training • Functional Training • Nutrition Exercise • Fat Loss & Muscle Gain",
-      certifications: [],
-      instagram: "@Paras_sannaki_4",
-      phone: "+919922721114" // Using default gym phone
+      experience: "10+ Years",
+      image: nikhilImage,
+      specialization: "Personal Training • General Training • Core Training",
+      certifications: ["GGFI"],
+      instagram: "https://www.instagram.com/staarboy__niikyaa?igsh=NnlnYW1jaWdqMnVj&utm_source=qr",
+      phone: "+91879323305"
     },
     {
       name: "Mahek Nagpal",
